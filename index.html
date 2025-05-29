@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <h1>Library!</h1>
+    <div id="BookContainer"></div>
+    <footer>
+        <button id="NewBook">New Book</button>
+    </footer>
+    <div id="NewBookGui">
+        <form action="" method="post" id="NewBookForm">
+            <h2>Add New Book!</h2>
+            <label for="name">Name of Book:</label>
+            <input type="text" id="name" required>
+            <label for="author">Name of Author</label>
+            <input type="text" id="author" required>
+            <label for="pages">Number of Pages</label>
+            <input type="number" id="pages" required>
+            <p>Have You Read the book?</p>
+            <div>
+                <label for="yes" >Yes</label>
+                <input type="radio" id="yes" name="read_status" value="true" required>
+            </div>
+            <div>
+                <label for="no">No</label>
+                <input type="radio" id="no" name="read_status" value="false">
+            </div>
+            <button type="submit">Submit</button>
+            
+        </form>
+    </div>
+</body>
+</html>
