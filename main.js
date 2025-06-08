@@ -9,22 +9,24 @@ NewBookButton.addEventListener("click", revealgui)
 NewBookForm.addEventListener("submit",NewBookFormSubmission)
 //Variables and event listeners
 //Creates A Book object with relevant data
-function Book(Name, Author, Pages, Read){
-    this.Name = Name
-    this.Author = Author
-    this.Pages = Pages
-    this.Read = Read
-    this.id = crypto.randomUUID()
-}
-//Change read status of book object
-Book.prototype.ChangeTheReadStatus = function ChangeTheReadStatus(){
-    if (this.Read == true){
-        this.Read = false
-    } else{
-        this.Read = true
+class Book{
+    constructor(Name,Author,Pages,Read){
+        this.Name = Name
+        this.Author = Author
+        this.Pages = Pages
+        this.Read = Read
+        this.id = crypto.randomUUID()
     }
-    DisplayBooks()
+    ChangeTheReadStatus(){
+        if (this.Read == true){
+            this.Read = false
+        } else {
+            this.Read = true
+        }
+        DisplayBooks()
+    }
 }
+
 //Adds book to array
 function AddBookToLibrary(name, author, pages, read){
     let booktoadd = new Book(name, author, pages, read)
@@ -33,7 +35,7 @@ function AddBookToLibrary(name, author, pages, read){
 //display all books properties and their values for array
 function DisplayBooks(){
     Container.innerHTML = "";
-    for(let book in MyLibrary){//Every boom in array
+    for(let book in MyLibrary){//Every book in array
         console.log(MyLibrary[book].id)
         let div = document.createElement("div");
         let trashcan = document.createElement("img");
